@@ -1,24 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
+import Home from "./components/Home";
+import NavBar from "./components/NavBar";
+import { createTheme, ThemeProvider} from '@material-ui/core/styles';
+import cyan from '@material-ui/core/colors/cyan';
+import blue from '@material-ui/core/colors/blue';
 
 function App() {
+
+  const theme = createTheme({
+    palette: {
+      primary: {
+        main: cyan[500],
+      },
+      secondary: {
+        main: blue[500],
+      },
+    },
+  });
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+
+    <BrowserRouter>
+    <ThemeProvider theme={theme}>
+    <NavBar/>
+     <Switch>
+             <Route exact path='/' component={Home} />
+             <Redirect to="/"/> 
+     </Switch>
+     </ThemeProvider>
+   </BrowserRouter>
+  
   );
 }
 
