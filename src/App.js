@@ -1,4 +1,5 @@
 import React from "react";
+import './index.css'
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 import Home from "./components/Home";
 import NavBar from "./components/NavBar";
@@ -15,7 +16,13 @@ function App() {
       },
       secondary: {
         main: blue[500],
-      },
+      }},
+      typography:{
+        fontFamily: "Comfortaa",
+        fontWeightLight: 300,
+        fontWeightRegular: 400,
+        fontWeightMedium: 500,
+        
     },
   });
   return (

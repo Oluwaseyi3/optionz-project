@@ -1,5 +1,5 @@
 import React from 'react'
-import {Typography,  Grid, Button, Paper, makeStyles, Box, Container} from '@material-ui/core';
+import {Typography,  Grid, Button, Paper, makeStyles} from '@material-ui/core';
 import TrendingUpIcon from '@material-ui/icons/TrendingUp';
 import TrendingDownIcon from '@material-ui/icons/TrendingDown';
 import CustomizedSelects from "../utils/Select.js"
@@ -9,16 +9,21 @@ import Select from '@material-ui/core/Select';
 import InputLabel from '@material-ui/core/InputLabel';
 import NativeSelect from '@material-ui/core/NativeSelect';
 import InputBase from '@material-ui/core/InputBase';
+import grey from '@material-ui/core/colors/grey';
 
+import { Container } from 'react-bootstrap';
 
 
 const useStyles = makeStyles((theme) => ({
     headerSection: {
-        marginTop :theme.spacing(23)
+        marginTop :theme.spacing(15)
     },
     container:{
         backgroundColor: "black",
-        color: "white"
+        color: "white",
+        padding: theme.spacing(3),
+        paddingBottom: theme.spacing(7)
+        
     },
     paraGraphSection:{
         marginTop :theme.spacing(5),
@@ -44,6 +49,14 @@ const useStyles = makeStyles((theme) => ({
     },
     select:{
         margin: theme.spacing(25)
+    },
+    paperText:{
+        marginTop: theme.spacing(2),
+        marginBottom: theme.spacing(2),
+        padding: theme.spacing(1),
+        backgroundColor: grey[900],
+       
+
     }
   }));
 
@@ -97,9 +110,20 @@ const SectionA = (props) => {
                     </Grid>
                 </div>
                 
-               
-                  <CustomizedSelects className={classes.select} />
+                <Grid container justifyContent="center" alignItems="flex-start" spacing={0}>
+                    <Grid item  md={6} xs={12} >
+                      <CustomizedSelects  />
+                    </Grid>
+                    <Grid item  md={6} xs={12} >
+                 
+                    <Paper className={classes.paperText}><Typography color="primary"  variant="body1">Trade Cost (Premium)</Typography></Paper>
+                    <Paper className={classes.paperText}><Typography color="primary" variant="body1">Trade Cost (Premium)</Typography></Paper>
+                    <Paper className={classes.paperText}><Typography color="primary" variant="body1">Trade Cost (Premium)</Typography></Paper>
+                    <Paper className={classes.paperText}><Typography color="primary" variant="body1">Trade Cost (Premium)</Typography></Paper>
+                    </Grid>
+                </Grid>
                 </Container>
+             
             </div>
         </div>
     )

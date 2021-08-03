@@ -1,6 +1,7 @@
 import React from 'react'
 import SectionA from "./LandingPage/SectionA"
 import SectionB from "./LandingPage/SectionB"
+import SectionC from "./LandingPage/SectionC"
 
 function Home() {
    
@@ -8,6 +9,7 @@ function Home() {
         <div>
             <SectionA />
             <SectionB />
+            <SectionC/>
         </div>
     )
 }
